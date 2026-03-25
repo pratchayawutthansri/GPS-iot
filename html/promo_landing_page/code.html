@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VITALPULSE | The Living Pulse for Your Pet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-dim": "#405164",
+              "tertiary-container": "#09c4fd",
+              "surface-container": "#e5e9e8",
+              "tertiary": "#006382",
+              "secondary-fixed": "#d2e4fb",
+              "on-error-container": "#570008",
+              "on-tertiary-fixed": "#00212e",
+              "tertiary-dim": "#005672",
+              "inverse-primary": "#5bfedd",
+              "primary": "#006857",
+              "inverse-on-surface": "#9a9e9d",
+              "on-surface-variant": "#585c5c",
+              "surface-container-high": "#dee3e2",
+              "on-background": "#2b2f2f",
+              "on-surface": "#2b2f2f",
+              "inverse-surface": "#0b0f0f",
+              "on-primary-fixed-variant": "#006454",
+              "background": "#f4f7f6",
+              "on-secondary": "#ecf3ff",
+              "primary-fixed-dim": "#3be7c7",
+              "secondary-fixed-dim": "#c4d6ed",
+              "tertiary-fixed": "#09c4fd",
+              "primary-fixed": "#50f5d5",
+              "on-secondary-fixed-variant": "#4c5d70",
+              "error-container": "#fb5151",
+              "on-primary": "#c3ffee",
+              "on-tertiary": "#e5f5ff",
+              "on-tertiary-fixed-variant": "#004359",
+              "outline-variant": "#aaaead",
+              "surface-container-low": "#eef1f0",
+              "tertiary-fixed-dim": "#00b6eb",
+              "primary-dim": "#005a4c",
+              "outline": "#747877",
+              "error": "#b31b25",
+              "surface-variant": "#d8dedd",
+              "on-secondary-fixed": "#304153",
+              "error-dim": "#9f0519",
+              "surface-dim": "#cfd6d5",
+              "on-tertiary-container": "#00394d",
+              "on-error": "#ffefee",
+              "surface-tint": "#006857",
+              "surface": "#f4f7f6",
+              "secondary": "#4c5d70",
+              "primary-container": "#50f5d5",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#425366",
+              "secondary-container": "#d2e4fb",
+              "on-primary-container": "#00594b",
+              "surface-bright": "#f4f7f6",
+              "on-primary-fixed": "#004439",
+              "surface-container-highest": "#d8dedd"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-4 max-w-full mx-auto bg-[#f4f7f6]/70 backdrop-blur-xl z-50 shadow-[0_20_40px_rgba(43,47,47,0.06)]">
+<div class="text-2xl font-black tracking-tight text-[#2b2f2f] font-headline">VITALPULSE</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-emerald-600 font-bold border-b-2 border-emerald-500 pb-1 font-inter text-sm transition-colors" href="#">Features</a>
+<a class="text-[#585c5c] font-medium hover:text-emerald-500 transition-colors font-inter text-sm" href="#">Technology</a>
+<a class="text-[#585c5c] font-medium hover:text-emerald-500 transition-colors font-inter text-sm" href="#">GPS Tracking</a>
+<a class="text-[#585c5c] font-medium hover:text-emerald-500 transition-colors font-inter text-sm" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#585c5c] font-medium px-4 py-2 hover:text-[#2b2f2f] transition-all font-inter text-sm">Login</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-headline font-bold px-6 py-2.5 rounded-xl scale-95 hover:scale-100 transition-all duration-200">Get Started</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-8 lg:px-24 overflow-hidden">
+<div class="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto">
+<div class="z-10 text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-label text-xs font-bold mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#006857]"></span>
+                        NEXT-GEN PET SAFETY
+                    </div>
+<h1 class="font-headline font-extrabold text-5xl lg:text-7xl text-on-surface tracking-tight leading-[1.1] mb-6">
+                        VITALPULSE: The Living Pulse for Your Pet
+                    </h1>
+<p class="font-body text-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                        Stay connected with your best friend, anytime, anywhere. Precision biometrics meets real-time tracking in a collar designed for the modern pet life.
+                    </p>
+<!-- App Download QR Codes -->
+<div class="flex flex-wrap gap-8 items-end">
+<div class="flex flex-col items-center gap-3">
+<div class="p-4 bg-surface-container-lowest rounded-2xl shadow-[0_20px_40px_rgba(43,47,47,0.06)] group transition-transform hover:-translate-y-1">
+<img alt="QR Code" class="w-24 h-24 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="minimalist QR code graphic with smooth rounded edges on white background for mobile application download" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTKNv-9cT5O9-qWSDKfd58RVE86P3nNSQ4kG7GBqPsVtNczhp_x0kj9iAg8e6ouq8HyHhm49JOETmjaxnHm1vzn1q0kWc1mbQ35LuIcd_BEvBABL7vr6cEkOb-z8tWXSXbcZPfAHc0N7wSozDGHXAtGiQvn9VAaXH7pKJnPeiwuuSbinjb0OF9dBveoIqUSDK2EbqTuENC8yFheXO0Q1xeBK6ojtpuXBBoMcY10-iCLfoF61kMtvfgEI0E1gRieDH8o9q0D_sRGMI"/>
+</div>
+<span class="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Download for iOS</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="p-4 bg-surface-container-lowest rounded-2xl shadow-[0_20px_40px_rgba(43,47,47,0.06)] group transition-transform hover:-translate-y-1">
+<img alt="QR Code" class="w-24 h-24 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="modern stylized QR code emblem representing an android mobile store link with soft rounded square container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq3WyN_Q6nFLtXGPc51tTYgkPIU-ZaiTHqgZDYj8OXMLWz8aqpxWf-IHvJev0Q3xy7rFKd3NZb5yHuANs5alFkoJhccGKx_fzevkpneCIItPOOC-nAGQB0yAcSSaTSsu_a59uDZCORCI_ykMYldZvc0TuGXNCPzdBwwLWzx3tlRfqyySPczAKdPVm06bR2zAl8uyzZ3l5qxFNLmF651eqxLJEt-wqdXMe1vbJGfp0bZcFCLiVUV9KSP2BG6FpJntU_dBCroi10At8"/>
+</div>
+<span class="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Download for Android</span>
+</div>
+</div>
+</div>
+<div class="relative flex justify-center lg:justify-end">
+<div class="relative w-full max-w-md aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl z-10 rotate-2">
+<img alt="Dog wearing smart collar" class="w-full h-full object-cover" data-alt="hero shot of a majestic golden retriever wearing a sleek dark teal smart collar, sunlight filtering through trees in background, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARrJKlDE8JcM8CEk3Zfh7gdjtBZBN0Xo6HGPwHKX-FqVcT3KSc64yqmrFunfDaX_S3uOCBpdvV0QL6iJZZQbRpzrGvcLSxP_vjTyO3KfthGjbYxpjULXQ9Z0GP97W7RRH9QxGJ4ldQHpEFXfK1fIgkPD5fIeb_UbsF1GEw292dvDI4CaGJdcEVQSD2Nxj8Y4xqOmcH17VsxDcnh0DYXFbK10yJkJN40_oPWkfwR880W8Iw__alzegoNqM9t9ONnBEo5sWqyfYisuw"/>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl -z-0"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-tertiary-container/20 rounded-full blur-3xl -z-0"></div>
+<!-- Float Stats Card -->
+<div class="absolute bottom-10 -left-8 z-20 bg-surface-container-lowest/90 backdrop-blur-md p-5 rounded-2xl shadow-xl flex items-center gap-4 border border-white/50">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<div class="font-label text-[10px] font-bold text-on-surface-variant uppercase">Current Heartbeat</div>
+<div class="font-headline font-bold text-xl text-on-surface">84 BPM</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Features Preview -->
+<section class="py-24 px-8 bg-surface-container">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-headline font-bold text-4xl text-on-surface mb-4">Precision Intelligence</h2>
+<p class="text-on-surface-variant font-body">Engineered for endurance and accuracy. Our technology stays invisible so your bond stays unbreakable.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Real-time GPS -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] transition-all hover:shadow-[0_20px_40px_rgba(43,47,47,0.06)] hover:-translate-y-2 flex flex-col items-start gap-6">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-3">Real-time GPS</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                                Pinpoint accuracy within 3 meters. Create custom safe-zones and get notified the second they wander too far.
+                            </p>
+</div>
+<div class="mt-auto w-full pt-6">
+<div class="h-32 w-full rounded-xl overflow-hidden bg-surface-container-low relative">
+<img alt="Map preview" class="w-full h-full object-cover grayscale opacity-50" data-alt="abstract satellite map view of a suburban neighborhood with soft green park areas and clean geometric street layouts" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIqidbctf4EnW0q573XdhO7e2i4myVChSneS8z5T1alN4lBZSCPU33djzaVN0SqLJLkUy_1MfKXveodnRObwAMDdLv1ep9m2gfCh9cyNe-SyJktkpAVcyRygER2Q-xvSckIkuL8ILnq0nlPnfiPQQe9Pxr_WASZIDxzdiWGkrkAS_pnibBNypqvKTeeq1t4Va95T942ZrgsmMZbXHl37mnLnvu_aWClZyuCqmsI5ox8G1eC_ZfgpGYMlihCY2K9DSeswDj4iZwBwo"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-4 h-4 bg-primary rounded-full shadow-[0_0_12px_#006857] animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Health Monitoring -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] transition-all hover:shadow-[0_20px_40px_rgba(43,47,47,0.06)] hover:-translate-y-2 flex flex-col items-start gap-6">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="ecg_heart">ecg_heart</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-3">Health Monitoring</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                                Track respiratory rate, sleep patterns, and daily caloric burn. Detection algorithms alert you to early signs of illness.
+                            </p>
+</div>
+<div class="mt-auto w-full pt-6 flex flex-col gap-2">
+<div class="flex justify-between items-center text-[10px] font-bold text-on-surface-variant">
+<span>DAILY ACTIVITY</span>
+<span>82% GOAL</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[82%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Smart Alerts -->
+<div class="bg-surface-container-lowest p-8 rounded-[2rem] transition-all hover:shadow-[0_20px_40px_rgba(43,47,47,0.06)] hover:-translate-y-2 flex flex-col items-start gap-6">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container/30 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl" data-icon="notifications_active">notifications_active</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-xl text-on-surface mb-3">Smart Alerts</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+                                Customizable push notifications for medication reminders, vet appointments, and proximity warnings.
+                            </p>
+</div>
+<div class="mt-auto w-full pt-6">
+<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/20 flex gap-3 items-center">
+<div class="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+</div>
+<div class="text-[11px] font-medium leading-tight">
+<div class="font-bold">Proximity Alert</div>
+<div class="text-on-surface-variant">Buddy has exited the Front Yard</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Preview (Bento Section) -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<div class="md:col-span-2 row-span-2 rounded-[2.5rem] overflow-hidden relative group">
+<img alt="Dogs playing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="two happy dogs running through a sunny meadow, high speed action shot with motion blur in background, vibrant natural colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ZM0mW8cN2ebgoclx_ItyvZjVEFrAmWKUqWc1i56-AwueoMaYU65D9tHgqqEuprA-MlmOZoK0ZCXLb3sL6hhZBCv48Iwl0YCJGpt5UPbIk1ly658rYJDkmTGmINHZj_qsAwSQ3jNrUbA_ZRCKY-hYAyI91TU781Wi_pEBCfdKiS7OaPAp_JEx0eMnuQ8e2H1kCOJ65SAPyR1SGfOvArD12uJcOcTXiafngKEiau1aBCVCklA3a376IOLLYWlnaGtzFTDONnHkKWc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-12">
+<h4 class="font-headline font-bold text-3xl text-white mb-2">Adventure Ready</h4>
+<p class="text-white/80 font-body max-w-sm">IP68 waterproof rating. Because the best moments happen in the rain and the mud.</p>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-[2.5rem] p-8 flex flex-col justify-center items-center text-center">
+<div class="text-primary font-headline font-black text-5xl mb-2">30+</div>
+<div class="text-on-surface-variant font-label text-xs font-bold uppercase tracking-widest">Days Battery Life</div>
+</div>
+<div class="bg-primary text-on-primary rounded-[2.5rem] p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl" data-icon="bolt">bolt</span>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Fast Sync</h4>
+<p class="text-on-primary/70 text-sm">Instant pairing via Bluetooth 5.2 and ultra-fast LTE data transfer.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#e5e9e8] py-12 px-8 border-t border-[#aaaead]/20">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="flex flex-col gap-4">
+<div class="font-manrope font-bold text-lg text-[#2b2f2f]">VITALPULSE</div>
+<p class="font-inter text-xs tracking-wide text-[#585c5c]">© 2024 VitalPulse IoT. The Living Pulse for your pets.</p>
+</div>
+<div class="flex flex-wrap md:justify-end gap-x-8 gap-y-4">
+<a class="font-inter text-xs tracking-wide text-[#585c5c] hover:text-[#2b2f2f] transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-inter text-xs tracking-wide text-[#585c5c] hover:text-[#2b2f2f] transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-inter text-xs tracking-wide text-[#585c5c] hover:text-[#2b2f2f] transition-all opacity-80 hover:opacity-100" href="#">Cookie Settings</a>
+<a class="font-inter text-xs tracking-wide text-[#585c5c] hover:text-[#2b2f2f] transition-all opacity-80 hover:opacity-100" href="#">Global Distribution</a>
+</div>
+</div>
+</footer>
+</body></html>

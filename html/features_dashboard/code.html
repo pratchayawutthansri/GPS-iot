@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VITALPULSE Dashboard | IoT Smart Pet Collar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-dim": "#405164",
+              "tertiary-container": "#09c4fd",
+              "surface-container": "#e5e9e8",
+              "tertiary": "#006382",
+              "secondary-fixed": "#d2e4fb",
+              "on-error-container": "#570008",
+              "on-tertiary-fixed": "#00212e",
+              "tertiary-dim": "#005672",
+              "inverse-primary": "#5bfedd",
+              "primary": "#006857",
+              "inverse-on-surface": "#9a9e9d",
+              "on-surface-variant": "#585c5c",
+              "surface-container-high": "#dee3e2",
+              "on-background": "#2b2f2f",
+              "on-surface": "#2b2f2f",
+              "inverse-surface": "#0b0f0f",
+              "on-primary-fixed-variant": "#006454",
+              "background": "#f4f7f6",
+              "on-secondary": "#ecf3ff",
+              "primary-fixed-dim": "#3be7c7",
+              "secondary-fixed-dim": "#c4d6ed",
+              "tertiary-fixed": "#09c4fd",
+              "primary-fixed": "#50f5d5",
+              "on-secondary-fixed-variant": "#4c5d70",
+              "error-container": "#fb5151",
+              "on-primary": "#c3ffee",
+              "on-tertiary": "#e5f5ff",
+              "on-tertiary-fixed-variant": "#004359",
+              "outline-variant": "#aaaead",
+              "surface-container-low": "#eef1f0",
+              "tertiary-fixed-dim": "#00b6eb",
+              "primary-dim": "#005a4c",
+              "outline": "#747877",
+              "error": "#b31b25",
+              "surface-variant": "#d8dedd",
+              "on-secondary-fixed": "#304153",
+              "error-dim": "#9f0519",
+              "surface-dim": "#cfd6d5",
+              "on-tertiary-container": "#00394d",
+              "on-error": "#ffefee",
+              "surface-tint": "#006857",
+              "surface": "#f4f7f6",
+              "secondary": "#4c5d70",
+              "primary-container": "#50f5d5",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#425366",
+              "secondary-container": "#d2e4fb",
+              "on-primary-container": "#00594b",
+              "surface-bright": "#f4f7f6",
+              "on-primary-fixed": "#004439",
+              "surface-container-highest": "#d8dedd"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(244, 247, 246, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .vitality-gradient {
+            background: linear-gradient(135deg, #006857 0%, #50f5d5 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pulse-animation {
+            box-shadow: 0 0 0 0 rgba(80, 245, 213, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(80, 245, 213, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(80, 245, 213, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(80, 245, 213, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-4 max-w-full mx-auto bg-[#f4f7f6]/70 dark:bg-[#1a1c1c]/70 backdrop-blur-xl z-50 shadow-[0_20_40px_rgba(43,47,47,0.06)]">
+<div class="text-2xl font-black tracking-tight text-[#2b2f2f] dark:text-[#eef1f0] font-manrope">VITALPULSE</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-emerald-600 dark:text-emerald-400 font-bold border-b-2 border-emerald-500 pb-1 font-inter text-sm transition-colors" href="#">Features</a>
+<a class="text-[#585c5c] dark:text-[#aaaead] font-medium font-inter text-sm hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors" href="#">Technology</a>
+<a class="text-[#585c5c] dark:text-[#aaaead] font-medium font-inter text-sm hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors" href="#">GPS Tracking</a>
+<a class="text-[#585c5c] dark:text-[#aaaead] font-medium font-inter text-sm hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 rounded-xl text-sm font-bold transition-all bg-surface-container-highest text-on-surface hover:opacity-100 opacity-80">Login</button>
+<button class="px-5 py-2 rounded-xl text-sm font-bold vitality-gradient text-on-primary shadow-lg hover:scale-95 duration-200 ease-in-out">Get Started</button>
+</div>
+</nav>
+<main class="pt-24 pb-12 px-6 md:px-12 max-w-[1600px] mx-auto">
+<!-- Header Section -->
+<header class="mb-10 flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-2xl">
+<span class="text-primary font-bold tracking-widest text-xs font-label uppercase mb-2 block">Real-time Intelligence</span>
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">Dashboard: Luna's Pulse</h1>
+<p class="text-on-surface-variant mt-4 text-lg">Detailed telemetry and spatial intelligence for your pet's daily journey.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container p-2 rounded-xl">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-lg shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-primary pulse-animation"></div>
+<span class="text-sm font-bold text-on-surface">Live Sync</span>
+</div>
+<div class="flex -space-x-2">
+<img class="w-10 h-10 rounded-full border-2 border-surface shadow-md object-cover" data-alt="close-up of a golden retriever face looking friendly and bright" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIk2DFQ2545Vu-SMflbHX7VIQMcABF9OHA4ktZpi8dVIUMRh2bTKffqT4X1nFeJ4LWkR5sWAIWfKTjfTjtd_VG0rTc9k-aqXkDF11ODvtEDUA1tNEuHHiKjeNlUDTDwuBtBq1O7zsicdM4-GLQEcsOK1JdPsN_ibTWMx9KBfgoN1yioEYUni7fBhrY8w2MpK9D6071MlCVzgcjQ2jRgpuoeyOFFVwWSPsq1XQ_eGi5WGTomMA1eRCXCiRpMugt2O8msDcBwQiFyGA"/>
+</div>
+</div>
+</header>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Map Widget (The Core) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<section class="relative h-[600px] bg-surface-container rounded-xl overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="detailed aerial topography map of a leafy suburban neighborhood with parks and walking paths in soft natural tones" data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXaCUOZYukxMN3tXXCSQCnVkyXWU6LYGJ2_4kbFkTbbAYiIfJkfSM103cE0N5HhZt7Wl4QQEXI151ymyokhp5lvXulugsr991vfZHG9vcG5yCOwW3tzSEIaZMPCC7Zg8ATETWn4ezTOGHfQTOoQIjWyDYdiLLL7Pprw6Z-DrYF4_ZBO7rkl-Coj1jHKpDrVoau7wUGr6A2vC7VorT7vSA2xBN8JYSMuh6pqrhFpNFgDquEZrVRWatHxwVjl9ZMtyy5wTXUa-atBPU')"></div>
+<!-- Map Controls -->
+<div class="absolute top-6 left-6 flex flex-col gap-3">
+<button class="w-12 h-12 glass-panel rounded-xl flex items-center justify-center text-on-surface shadow-lg hover:bg-surface-container-lowest transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-12 h-12 glass-panel rounded-xl flex items-center justify-center text-on-surface shadow-lg hover:bg-surface-container-lowest transition-all">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+</div>
+<div class="absolute top-6 right-6">
+<div class="glass-panel px-6 py-3 rounded-xl shadow-lg flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Current Zone</span>
+<span class="text-sm font-bold text-on-surface">Central Park North</span>
+</div>
+<div class="w-[2px] h-8 bg-outline-variant/20"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="security" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-sm font-bold text-primary">SAFE</span>
+</div>
+</div>
+</div>
+<!-- Custom Pet Pin -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="relative">
+<div class="absolute -inset-4 rounded-full vitality-gradient opacity-20 animate-ping"></div>
+<div class="w-16 h-16 rounded-full border-4 border-surface shadow-2xl overflow-hidden relative z-10">
+<img class="w-full h-full object-cover" data-alt="close up headshot of a golden retriever dog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP20JQpHl3UJSCLpFIyJlPsu9rFElpdZoIKFOyXZQOlCmDAgUaD0k2X1GBlPJsPJ9cTbf8MLeNkqP-ult0pWbUK0TiIECDc7f1OzxGsf0Qu1NXHWaoW97F0LOJ-RHdKxaLf0phA-1yhw1EFJ9xgt3bdcR4ZKXjRZPgVHZCA8z-X-j2GEX25Oe4RnX3GrF6G7oVJnKwOTl9rSJqWdZCxdg9ArCY-ywC2MFJp1iZ_qWNI4CC0v2jRs9rtzvDBLKYnsyF4K9XTpcJUAQ"/>
+</div>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 vitality-gradient p-1.5 rounded-full z-20 shadow-lg">
+<span class="material-symbols-outlined text-white text-[12px] block" data-icon="pets" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+</div>
+<div class="mt-4 glass-panel px-4 py-2 rounded-lg shadow-xl text-center">
+<span class="text-xs font-bold text-on-surface block">Luna is here</span>
+<span class="text-[10px] text-on-surface-variant font-medium">Last seen: 2 mins ago</span>
+</div>
+</div>
+<!-- Map Overlay Stats -->
+<div class="absolute bottom-6 left-6 right-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-panel p-4 rounded-xl shadow-lg border border-white/20">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Distance Today</span>
+<div class="text-xl font-headline font-extrabold text-on-surface">4.2 <span class="text-sm font-medium">km</span></div>
+</div>
+<div class="glass-panel p-4 rounded-xl shadow-lg border border-white/20">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Avg Speed</span>
+<div class="text-xl font-headline font-extrabold text-on-surface">3.8 <span class="text-sm font-medium">km/h</span></div>
+</div>
+<div class="glass-panel p-4 rounded-xl shadow-lg border border-white/20">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Boundary Crosses</span>
+<div class="text-xl font-headline font-extrabold text-on-surface">0</div>
+</div>
+<div class="glass-panel p-4 rounded-xl shadow-lg border border-white/20">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Signal Strength</span>
+<div class="flex items-center gap-1 mt-1">
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<span class="text-xs font-bold text-on-surface ml-2">Excellent</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Chart Section -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20_40px_rgba(43,47,47,0.04)]">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Activity Intensity</h3>
+<p class="text-sm text-on-surface-variant">Movement levels captured over the last 24 hours.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 text-xs font-bold bg-surface-container rounded-lg text-on-surface">24H</button>
+<button class="px-3 py-1.5 text-xs font-bold text-on-surface-variant hover:bg-surface-container rounded-lg">7D</button>
+</div>
+</div>
+<div class="h-48 w-full flex items-end gap-1.5 px-2">
+<!-- Mockup Line/Bar Hybrid Chart -->
+<div class="flex-1 bg-surface-container-low rounded-t-full h-[30%]"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-full h-[45%]"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-full h-[25%]"></div>
+<div class="flex-1 vitality-gradient rounded-t-full h-[60%] opacity-80"></div>
+<div class="flex-1 vitality-gradient rounded-t-full h-[85%]"></div>
+<div class="flex-1 vitality-gradient rounded-t-full h-[70%] opacity-90"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-full h-[40%]"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-full h-[20%]"></div>
+<div class="flex-1 vitality-gradient rounded-t-full h-[95%]"></div>
+<div class="flex-1 vitality-gradient rounded-t-full h-[75%] opacity-90"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-full h-[50%]"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-full h-[35%]"></div>
+<div class="flex-1 vitality-gradient rounded-t-full h-[65%]"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-full h-[25%]"></div>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<span class="text-[10px] font-bold text-outline uppercase">6 AM</span>
+<span class="text-[10px] font-bold text-outline uppercase">12 PM</span>
+<span class="text-[10px] font-bold text-outline uppercase">6 PM</span>
+<span class="text-[10px] font-bold text-outline uppercase">12 AM</span>
+</div>
+</section>
+</div>
+<!-- Right Column: Stats & Alerts -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<!-- Health Stats Card -->
+<section class="bg-surface-container p-8 rounded-xl">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-8">Vital Statistics</h3>
+<div class="space-y-8">
+<!-- Heart Rate BPM -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full border-4 border-surface-container-high flex items-center justify-center relative">
+<svg class="absolute inset-0 w-full h-full rotate-[-90deg]">
+<circle class="text-error/30" cx="32" cy="32" fill="none" r="28" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-error" cx="32" cy="32" fill="none" r="28" stroke="currentColor" stroke-dasharray="175" stroke-dashoffset="40" stroke-width="4"></circle>
+</svg>
+<span class="material-symbols-outlined text-error" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Heart Rate</span>
+<div class="text-2xl font-headline font-black text-on-surface">82 <span class="text-sm font-medium opacity-60">BPM</span></div>
+</div>
+</div>
+<span class="text-[10px] font-bold text-primary bg-primary-container/20 px-2 py-1 rounded-full uppercase">Resting</span>
+</div>
+<!-- Daily Steps -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full border-4 border-surface-container-high flex items-center justify-center relative">
+<svg class="absolute inset-0 w-full h-full rotate-[-90deg]">
+<circle class="text-tertiary-container/30" cx="32" cy="32" fill="none" r="28" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-tertiary-container" cx="32" cy="32" fill="none" r="28" stroke="currentColor" stroke-dasharray="175" stroke-dashoffset="30" stroke-width="4"></circle>
+</svg>
+<span class="material-symbols-outlined text-tertiary" data-icon="footprint" data-weight="fill" style="font-variation-settings: 'FILL' 1;">footprint</span>
+</div>
+<div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Daily Steps</span>
+<div class="text-2xl font-headline font-black text-on-surface">12,480</div>
+</div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant bg-surface-container-high px-2 py-1 rounded-full uppercase">Goal: 15k</span>
+</div>
+<!-- Sleep Score -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex items-center gap-4 shadow-sm">
+<div class="w-12 h-12 vitality-gradient rounded-xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="bedtime" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+<div>
+<span class="text-xs font-bold text-on-surface-variant uppercase">Sleep Recovery</span>
+<div class="text-lg font-headline font-bold text-on-surface">94% <span class="text-xs font-medium text-primary ml-2">+12% vs last week</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Alerts List -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20_40px_rgba(43,47,47,0.04)]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-xl font-bold text-on-surface">Live Stream Alerts</h3>
+<span class="w-2.5 h-2.5 rounded-full bg-error pulse-animation"></span>
+</div>
+<div class="space-y-1">
+<!-- Alert Item -->
+<div class="group flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-all cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-error-container/20 flex items-center justify-center text-error flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="warning">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-on-surface">Geofence Alert</span>
+<span class="text-[10px] font-medium text-on-surface-variant">14:20</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Luna exited the <span class="font-bold">Home Sanctuary</span> zone.</p>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="group flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-all cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="battery_2_bar">battery_2_bar</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-on-surface">Low Battery</span>
+<span class="text-[10px] font-medium text-on-surface-variant">11:05</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Collar charge is at <span class="font-bold text-error">15%</span>. Connect to charger soon.</p>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="group flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-all cursor-pointer">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-on-surface">Activity Milestone</span>
+<span class="text-[10px] font-medium text-on-surface-variant">09:30</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Daily movement goal (10k steps) has been achieved!</p>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="group flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-all cursor-pointer opacity-60">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="sync">sync</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-on-surface">Firmware Update</span>
+<span class="text-[10px] font-medium text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">System successfully updated to version 4.2.0-Vital.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border-2 border-surface-container-high rounded-xl text-sm font-bold text-on-surface hover:bg-surface-container transition-all">View All Alerts History</button>
+</section>
+</div>
+</div>
+</main>
+<footer class="bg-[#e5e9e8] dark:bg-[#2b2f2f] full-width py-12 px-8 border-t border-[#aaaead]/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-[1600px] mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-manrope font-bold text-lg text-[#2b2f2f] dark:text-[#f4f7f6]">VITALPULSE</div>
+<p class="font-inter text-xs tracking-wide text-[#585c5c] dark:text-[#aaaead]">© 2024 VitalPulse IoT. The Living Pulse for your pets.</p>
+</div>
+<div class="flex flex-wrap md:justify-end gap-6">
+<a class="font-inter text-xs tracking-wide text-[#585c5c] dark:text-[#aaaead] hover:text-[#2b2f2f] dark:hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-inter text-xs tracking-wide text-[#585c5c] dark:text-[#aaaead] hover:text-[#2b2f2f] dark:hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-inter text-xs tracking-wide text-[#585c5c] dark:text-[#aaaead] hover:text-[#2b2f2f] dark:hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Cookie Settings</a>
+<a class="font-inter text-xs tracking-wide text-[#585c5c] dark:text-[#aaaead] hover:text-[#2b2f2f] dark:hover:text-white transition-all opacity-80 hover:opacity-100" href="#">Global Distribution</a>
+</div>
+</div>
+</footer>
+</body></html>
